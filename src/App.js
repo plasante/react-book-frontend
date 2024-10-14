@@ -7,6 +7,7 @@ import Logout from "./components/login_logout/Logout";
 import Book from "./components/books/Book";
 import Navbar from "./components/navbar/Navbar";
 import User from "./components/users/User";
+import Register from "./components/register/Register";
 
 const App = () => {
     return (
@@ -21,6 +22,7 @@ const App = () => {
                         <Route path="/logout" element={<Logout/>}/>
                         <Route path="/books" element={<Book/>}/>
                         <Route path="/users" element={<User/>}/>
+                        <Route path="/register" element={<Register/>}/>
                     </Routes>
                 </div>
             </div>

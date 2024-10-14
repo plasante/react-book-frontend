@@ -1,23 +1,31 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {NavLink} from "react-router-dom";
-import { AppContext } from "../../context/AppContext";
+import {AppContext} from "../../context/AppContext";
 import './Navbar.css';
 
 const Navbar = () => {
-    const { token } = useContext(AppContext);
-    const [userToken, setUserToken] = useState(token);
+    const {token} = useContext(AppContext);
+    const [isLoggedIn, setIsLoggedIn] = useState(token);
 
     useEffect(() => {
-        setUserToken(token);
+        setIsLoggedIn(token);
     }, [token]);
 
     return (
         <nav>
             <NavLink className="nav-button" activeClassName="active-nav-button" to="/">Home</NavLink>
             {
-                userToken ?
-                    <NavLink className="nav-button" activeClassName="active-nav-button" to="/logout">Logout</NavLink> :
-                <NavLink className="nav-button" activeClassName="active-nav-button" to="/login">Login</NavLink>
+                isLoggedIn ?
+                    <>
+                        <NavLink className="nav-button" activeClassName="active-nav-button"
+                                 to="/logout">Logout</NavLink>
+                    </>
+                    :
+                    <>
+                        <NavLink className="nav-button" activeClassName="active-nav-button" to="/login">Login</NavLink>
+                        <NavLink className="nav-button" activeClassName="active-nav-button"
+                                 to="/register">Register</NavLink>
+                    </>
             }
             <NavLink className="nav-button" activeClassName="active-nav-button" to="/books">Books</NavLink>
             <NavLink className="nav-button" activeClassName="active-nav-button" to="/users">Users</NavLink>
