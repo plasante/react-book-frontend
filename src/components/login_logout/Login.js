@@ -84,7 +84,7 @@ const Login = () => {
                 error={!!errors.password}
                 helperText={errors.password}
             />
-            <Button variant="contained" color={"primary"} fullwidth onClick={handleLogin}>
+            <Button variant="contained" color={"primary"} fullWidth onClick={handleLogin}>
                 Login
             </Button>
             {loginError && <p style={{ color: 'red' }}>{loginError}</p>}
