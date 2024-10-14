@@ -47,7 +47,7 @@ const Login = () => {
 
         fetchLoginToken('/auth/token', {email, password})
             .then((response) => {
-                const token = response.data.token;
+                const token = response.data;
                 setLoginError('');
                 dispatch({
                     type: 'SET_TOKEN',
