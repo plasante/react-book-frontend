@@ -1,10 +1,10 @@
 import React, {useEffect} from "react";
 import { useNavigate } from "react-router-dom";
-import Budget from "./Budget";
-import Remaining from "./Remaining";
-import ExpenseTotal from "./ExpenseTotal";
-import ExpenseList from "./ExpenseList";
-import AddExpenseForm from "./AddExpenseForm";
+import Budget from "./children/Budget";
+import Remaining from "./children/Remaining";
+import ExpenseTotal from "./children/ExpenseTotal";
+import ExpenseList from "./children/ExpenseList";
+import AddExpenseForm from "./children/AddExpenseForm";
 
 const Home = () => {
 

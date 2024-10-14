@@ -3,12 +3,12 @@ import { AppContext } from "../../context/AppContext";
 
 const Logout = () => {
 
-    const { token, dispatch } = useContext(AppContext);
+    const {dispatch } = useContext(AppContext);
 
     useEffect(() => {
         dispatch({ type: 'SET_TOKEN', payload: '' });
         localStorage.removeItem('token');
-    }, [token, dispatch]);
+    }, [dispatch]);
 
     return (
         <>
